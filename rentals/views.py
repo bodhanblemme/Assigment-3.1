@@ -2,7 +2,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Equipment, Client, Rental
 from .forms import EquipmentForm, ClientForm, RentalForm
-
+from django.views.generic import TemplateView
 
 class EquipmentListView(ListView):
     model = Equipment
@@ -92,3 +92,6 @@ class RentalDeleteView(DeleteView):
     model = Rental
     template_name = 'rentals/rental_confirm_delete.html'
     success_url = reverse_lazy('rental_list')
+
+class HomeView(TemplateView):
+    template_name = 'rentals/home.html'
