@@ -1,0 +1,12 @@
+{% extends 'rentals/base.html' %} {% block content %}
+<h1>Rental Details</h1>
+
+<p>Equipment: {{ object.equipment }}</p>
+<p>Client: {{ object.client }}</p>
+<p>Rental date: {{ object.rental_date }}</p>
+<p>Return date: {{ object.return_date }}</p>
+<p>Notes: {{ object.notes }}</p>
+
+<a href="{% url 'rental_update' object.pk %}">Edit</a>
+<a href="{% url 'rental_delete' object.pk %}">Delete</a>
+<a href="{% url 'rental_list' %}">Back to list</a>{% endblock %}

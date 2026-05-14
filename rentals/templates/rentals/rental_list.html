@@ -1,0 +1,17 @@
+{% extends 'rentals/base.html' %}{% block content %}
+<h1>Rental List</h1>
+
+<a href="{% url 'rental_create' %}">Add Rental</a>
+
+<ul>
+    {% for rental in object_list %}
+    <li>
+        <a href="{% url 'rental_detail' rental.pk %}">
+                {{ rental.equipment }} - {{ rental.client }}
+            </a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'equipment_list' %}">Equipment</a>
+<a href="{% url 'client_list' %}">Clients</a>{% endblock %}
