@@ -1,4 +1,5 @@
-<h1>Equipment List</h1>
+{% extends 'rentals/base.html' %} {% block content %}
+<h2>Equipment List</h2>
 
 <a href="{% url 'equipment_create' %}">Add Equipment</a>
 
@@ -11,3 +12,4 @@
     </li>
     {% endfor %}
 </ul>
+{% endblock %}

@@ -1,3 +1,4 @@
+{% extends 'rentals/base.html' %} {% block content %}
 <h1>Client List</h1>
 
 <a href="{% url 'client_create' %}">Add Client</a>
@@ -13,4 +14,4 @@
 </ul>
 
 <a href="{% url 'equipment_list' %}">Equipment</a>
-<a href="{% url 'rental_list' %}">Rentals</a>
+<a href="{% url 'rental_list' %}">Rentals</a>{% endblock %}

@@ -1,3 +1,4 @@
+{% extends 'rentals/base.html' %} {% block content %}
 <h1>Rental Details</h1>
 
 <p>Equipment: {{ object.equipment }}</p>
@@ -8,4 +9,4 @@
 
 <a href="{% url 'rental_update' object.pk %}">Edit</a>
 <a href="{% url 'rental_delete' object.pk %}">Delete</a>
-<a href="{% url 'rental_list' %}">Back to list</a>
+<a href="{% url 'rental_list' %}">Back to list</a>{% endblock %}

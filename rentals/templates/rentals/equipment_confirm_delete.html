@@ -1,3 +1,4 @@
+{% extends 'rentals/base.html' %} {% block content %}
 <h1>Delete Equipment</h1>
 
 <p>Are you sure you want to delete: {{ object.name }}?</p>
@@ -7,4 +8,4 @@
     <button type="submit">Yes, delete</button>
 </form>
 
-<a href="{% url 'equipment_detail' object.pk %}">Cancel</a>
+<a href="{% url 'equipment_detail' object.pk %}">Cancel</a>{% endblock %}
