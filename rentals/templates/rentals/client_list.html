@@ -1,0 +1,16 @@
+<h1>Client List</h1>
+
+<a href="{% url 'client_create' %}">Add Client</a>
+
+<ul>
+    {% for client in object_list %}
+    <li>
+        <a href="{% url 'client_detail' client.pk %}">
+                {{ client.first_name }} {{ client.last_name }}
+            </a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'equipment_list' %}">Equipment</a>
+<a href="{% url 'rental_list' %}">Rentals</a>
