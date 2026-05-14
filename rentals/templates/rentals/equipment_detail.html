@@ -1,0 +1,10 @@
+<h1>Equipment Details</h1>
+
+<p>Name: {{ object.name }}</p>
+<p>Category: {{ object.category }}</p>
+<p>Daily price: {{ object.daily_price }}</p>
+<p>Available: {{ object.available }}</p>
+
+<a href="{% url 'equipment_update' object.pk %}">Edit</a>
+<a href="{% url 'equipment_delete' object.pk %}">Delete</a>
+<a href="{% url 'equipment_list' %}">Back to list</a>

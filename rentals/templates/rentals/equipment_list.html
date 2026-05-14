@@ -1,0 +1,13 @@
+<h1>Equipment List</h1>
+
+<a href="{% url 'equipment_create' %}">Add Equipment</a>
+
+<ul>
+    {% for equipment in object_list %}
+    <li>
+        <a href="{% url 'equipment_detail' equipment.pk %}">
+                {{ equipment.name }}
+            </a>
+    </li>
+    {% endfor %}
+</ul>
