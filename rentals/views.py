@@ -1,12 +1,17 @@
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 from .models import Equipment, Client, Rental
 from .forms import EquipmentForm, ClientForm, RentalForm
-from django.views.generic import TemplateView
+
+
+class HomeView(TemplateView):
+    template_name = 'rentals/home.html'
+
 
 class EquipmentListView(ListView):
     model = Equipment
     template_name = 'rentals/equipment_list.html'
+    paginate_by = 5
 
 
 class EquipmentDetailView(DetailView):
@@ -37,6 +42,7 @@ class EquipmentDeleteView(DeleteView):
 class ClientListView(ListView):
     model = Client
     template_name = 'rentals/client_list.html'
+    paginate_by = 5
 
 
 class ClientDetailView(DetailView):
@@ -67,6 +73,7 @@ class ClientDeleteView(DeleteView):
 class RentalListView(ListView):
     model = Rental
     template_name = 'rentals/rental_list.html'
+    paginate_by = 5
 
 
 class RentalDetailView(DetailView):
@@ -92,6 +99,3 @@ class RentalDeleteView(DeleteView):
     model = Rental
     template_name = 'rentals/rental_confirm_delete.html'
     success_url = reverse_lazy('rental_list')
-
-class HomeView(TemplateView):
-    template_name = 'rentals/home.html'

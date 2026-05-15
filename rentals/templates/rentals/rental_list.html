@@ -1,4 +1,4 @@
-{% extends 'rentals/base.html' %}{% block content %}
+{% extends 'rentals/base.html' %} {% block content %}
 <h1>Rental List</h1>
 
 <a href="{% url 'rental_create' %}">Add Rental</a>
@@ -13,5 +13,19 @@
     {% endfor %}
 </ul>
 
+{% if is_paginated %}
+<div>
+    {% if page_obj.has_previous %}
+    <a href="?page=1">First</a>
+    <a href="?page={{ page_obj.previous_page_number }}">Previous</a> {% endif %}
+
+    <span>
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+    </span> {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+    <a href="?page={{ page_obj.paginator.num_pages }}">Last</a> {% endif %}
+</div>
+{% endif %}
+
 <a href="{% url 'equipment_list' %}">Equipment</a>
-<a href="{% url 'client_list' %}">Clients</a>{% endblock %}
+<a href="{% url 'client_list' %}">Clients</a> {% endblock %}
