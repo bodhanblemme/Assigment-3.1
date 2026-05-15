@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rental System</title>
+</head>
+
+<body>
+
+    <h1>Rental System</h1>
+
+    <nav>
+        <a href="{% url 'equipment_list' %}">Equipment</a> |
+        <a href="{% url 'client_list' %}">Clients</a> |
+        <a href="{% url 'rental_list' %}">Rentals</a>
+    </nav>
+
+    <hr> {% block content %} {% endblock %}
+
+</body>
+
+</html>
